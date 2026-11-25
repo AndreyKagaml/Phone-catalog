@@ -1,10 +1,47 @@
 {
-  "extends": "@mate-academy/students-ts-config",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+
+    "forceConsistentCasingInFileNames": true,
+
+    "sourceMap": false,
+
+    "types": [
+      "node",
+      "cypress"
+    ],
+
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+
   "include": [
     "src"
   ],
-  "compilerOptions": {
-    "sourceMap": false,
-    "types": ["node"]
-  }
+
+  "exclude": [
+    "node_modules"
+  ]
 }

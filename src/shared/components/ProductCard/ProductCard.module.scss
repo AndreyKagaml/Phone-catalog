@@ -1,0 +1,95 @@
+.card {
+  --card-span-columns: 3;
+
+  @include media-tablet{
+    --card-span-columns: 5;
+  }
+
+  @include media-desktop{
+    --card-span-columns: 6;
+  }
+
+  display: flex;
+
+  // calc((100% - 3 * 16px) / 4 * 3 + 2 * 16px);
+  // calc((100% - 11 * 16px) / 12 * 5 + 4 * 16px);
+
+  // calculating width of card depends on grid
+  flex: 0 0
+    calc(
+      (100% - calc(var(--layout-columns-count) - 1) * var(--layout-grid-gap-x)) / var(--layout-columns-count) * var(--card-span-columns) + calc(var(--card-span-columns) - 1) * var(--layout-grid-gap-x)
+    );
+  flex-direction: column;
+  gap: 8px;
+
+  box-sizing: border-box;
+  padding: 32px;
+  border: 1px solid var(--color-elements);
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  &__img {
+    display: block;
+    flex: 1;
+
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    min-height: 0;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__title {
+    padding-top: 16px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: var(--color-primary);
+  }
+
+  &__price {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__line {
+    width: 100%;
+    border: 1px solid var(--color-elements);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-block: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+
+    // height: fit-content;
+    // align-items: stretch;
+    height: 40px;
+  }
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 140%;
+  color: var(--color-primary);
+
+  &__full {
+    font-weight: 600;
+    line-height: 100%;
+    color: var(--color-secondary);
+    text-decoration: line-through;
+  }
+}
+
+

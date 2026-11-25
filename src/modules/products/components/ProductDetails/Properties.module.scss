@@ -1,0 +1,34 @@
+.section__title{
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 100%;
+
+  @include media-tablet {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 140%;
+  }
+}
+
+.tech{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include media-tablet {
+    gap: 25px;
+  }
+
+  &__area{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.info__title, .info__text{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+}

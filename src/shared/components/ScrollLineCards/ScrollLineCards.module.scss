@@ -1,0 +1,59 @@
+.section{
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
+.header{
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title{
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 140%;
+
+    @include media-tablet {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -1%;
+    }
+  }
+
+  &__buttons{
+    display: flex;
+    gap: 16px;
+    height: 32px;
+  }
+}
+
+.arrowButton{
+  height: 100%;
+}
+
+.button__prev{
+  transform: rotate(-90deg);
+}
+
+.button__next{
+  transform: rotate(90deg);
+}
+
+.cardsViewport {
+  overflow: hidden;
+  grid-column: 1 / -1;
+  margin-top: 24px;
+}
+
+.cards{
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  overflow-x: auto;
+  display: flex;
+  gap: 16px;
+}
+
+
