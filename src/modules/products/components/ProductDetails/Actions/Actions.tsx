@@ -45,7 +45,9 @@ export const Actions = ({ device, discount = true, className }: Props) => {
     (newColor: string) => {
       const followId = `${namespaceId}-${capacity.toLowerCase()}-${newColor}`;
 
-      navigate(`/${category}/${followId}`);
+      navigate(`/${category}/${followId}`, {
+        state: { preserveScroll: true },
+      });
     },
     [capacity, category, namespaceId, navigate],
   );
@@ -54,7 +56,9 @@ export const Actions = ({ device, discount = true, className }: Props) => {
     (newCapacity: string) => {
       const followId = `${namespaceId}-${newCapacity.toLowerCase()}-${color}`;
 
-      navigate(`/${category}/${followId}`);
+      navigate(`/${category}/${followId}`, {
+        state: { preserveScroll: true },
+      });
     },
     [category, color, namespaceId, navigate],
   );

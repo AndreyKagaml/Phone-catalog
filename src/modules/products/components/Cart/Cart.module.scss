@@ -65,8 +65,6 @@
   }
 }
 
-
-
 .summary{
   display: flex;
   grid-column: 1 / -1;
@@ -112,6 +110,12 @@
   height: 48px;
 }
 
-.notFoundLabel{
+.loader, .errorLabel, .notFoundLabel {
   grid-column: 1 / -1;
+  margin-top: 16px;
+
+   @include media-desktop{
+    grid-column: 4 / -4;
+    margin-top: 32px;
+  }
 }

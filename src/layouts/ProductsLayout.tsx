@@ -7,13 +7,21 @@ import { BreadcrumbProvider } from '@/shared/context/BreadcrumbContext';
 import styles from './ProductsLayout.module.scss';
 
 export const ProductsLayout = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+
+  const preserveScroll = (location.state as { preserveScroll?: boolean } | null)
+    ?.preserveScroll;
 
   useEffect(() => {
+    if (preserveScroll) {
+      return;
+    }
+
     window.scrollTo({
       top: 0,
+      behavior: 'smooth',
     });
-  }, [pathname]);
+  }, [location.pathname, preserveScroll]);
 
   return (
     <BreadcrumbProvider>

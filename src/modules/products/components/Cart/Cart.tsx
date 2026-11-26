@@ -32,18 +32,20 @@ export const Cart = () => {
   );
 
   const products =
-    data?.items.map(item => {
-      const { itemId, image, name, price } = item;
-      const quantity = quantities.get(itemId) ?? 0;
+    data?.items
+      .filter(item => quantities.has(item.itemId))
+      .map(item => {
+        const { itemId, image, name, price } = item;
+        const quantity = quantities.get(itemId) ?? 0;
 
-      return {
-        id: itemId,
-        image,
-        name,
-        quantity,
-        totalPrice: price * quantity,
-      };
-    }) ?? [];
+        return {
+          id: itemId,
+          image,
+          name,
+          quantity,
+          totalPrice: price * quantity,
+        };
+      }) ?? [];
 
   const { totalQuantity, totalPrice } = products.reduce(
     (acc, item) => ({
@@ -73,7 +75,7 @@ export const Cart = () => {
         <ErrorLabel className={styles.errorLabel} onRetry={refetch} />
       )}
       {data &&
-        (data.total === 0 ? (
+        (cartItems.length === 0 ? (
           <NotFoundLabel
             title={t('yourCartIsEmpty')}
             handleClick={() => navigate(ROUTES.HOME)}

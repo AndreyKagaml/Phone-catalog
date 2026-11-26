@@ -68,5 +68,6 @@ export const useProductQuery = (id: string) => {
   return useQuery({
     queryKey: productKeys.detail(id),
     queryFn: () => getProductById(id),
+    placeholderData: keepPreviousData,
   });
 };
