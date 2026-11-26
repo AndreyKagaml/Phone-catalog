@@ -1,6 +1,6 @@
 {
   "name": "react_phone-catalog",
-  "homepage": ".",
+  "homepage": "https://andreykagaml.github.io/Phone-catalog/",
   "version": "0.1.0",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
