@@ -43,7 +43,8 @@ export const Actions = ({ device, discount = true, className }: Props) => {
 
   const handleChoseColor = useCallback(
     (newColor: string) => {
-      const followId = `${namespaceId}-${capacity.toLowerCase()}-${newColor}`;
+      const choosedColor = newColor.toLowerCase().replace(/\s+/g, '-');
+      const followId = `${namespaceId}-${capacity.toLowerCase()}-${choosedColor}`;
 
       navigate(`/${category}/${followId}`, {
         state: { preserveScroll: true },

@@ -24,7 +24,7 @@ export const Footer = () => {
 
       <nav className={styles.nav}>
         <a
-          href="https://github.com/AndreyKagaml/react_phone-catalog"
+          href="https://github.com/AndreyKagaml/Phone-catalog"
           target="_blank"
           rel="noopener noreferrer"
         >
